@@ -1,0 +1,62 @@
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Update Employee</h1>
+      </div>
+      <form [formGroup]="employeformupdate" (ngSubmit)="Update()">
+  
+        <div class="lg:w-1/2 md:w-2/3 mx-auto" >
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/3">
+              <label for="nom" class="leading-7 text-sm text-gray-600">Nom:</label><br>
+              <input type="text" id="nom" formControlName="nom" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="p-2 w-1/3">
+              <label for="prenom" class="leading-7 text-sm text-gray-400">Prenom:</label><br>
+              <input type="text" id="prenom" formControlName="prenom" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="p-2 w-1/3">
+                <label for="fonction" class="leading-7 text-sm text-gray-400">Fonction:</label><br>
+                <input type="text" id="fonction" formControlName="fonction" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+             <label for="direction" class="leading-7 text-sm text-gray-400">Direction:</label><br>
+            <select id="direction" formControlName="direction" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option value="tunis nord">Tunis Nord</option>
+                <option value="tunis centre">Tunis Centre</option>
+                <option value="tunis sud">Tunis Sud</option>
+                <option value="gafsa">Gafsa</option>
+                <option value="jendouba">Jendouba</option>
+                <option value="monastir">Monastir</option>
+                <option value="nabeul">Nabeul</option>
+                <option value="sfax">Sfax</option>
+                <option value="mednine">Mednine</option>
+                <option value="bizerte">Bizerte</option>
+                <option value="sousse">Sousse</option>
+            </select> 
+            <div class="p-2 w-1/2" >
+              <label for="agence" class="leading-7 text-sm text-gray-400">Agence:</label><br>
+              <input type="text" id="agence" formControlName="agence" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="p-2 w-1/2">
+                <label for="numin" class="leading-7 text-sm text-gray-400">Num interne:</label><br>
+                <input type="number" id="numin" formControlName="numin" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <div class="p-2 w-1/2">
+                <label for="numex" class="leading-7 text-sm text-gray-400">Num externe:</label><br>
+                <input type="number" id="numex" formControlName="numex" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            <div class="p-2 w-full">
+              <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Ajouter</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div>
+        <a class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" routerLink="/home" routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page">
+          <span></span> 
+       
+          Home
+       
+         </a> 
+      
+      </div>

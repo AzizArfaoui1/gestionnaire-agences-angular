@@ -1,0 +1,41 @@
+<app-navabar></app-navabar>
+<br><br><br><br>
+<table>
+    <thead>
+      <tr>
+        <th colspan="6">Nom</th>
+        <th colspan="6">Prenom</th>
+        <th colspan="6">Direction</th>
+        <th colspan="6">Numero interne</th>
+        <th colspan="6">Numero externe</th>
+        <th colspan="6">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Use *ngFor to iterate through employes -->
+      <tr *ngFor="let employe of getEmployeesWithSiegeTrue()">
+        <!-- Display employe details for employees with employe.siege == true -->
+        <td colspan="6">{{ employe.nom }}</td>
+        <td colspan="6">{{ employe.prenom }}</td>
+        <td colspan="6">{{ employe.direction }}</td>  
+        <td colspan="6">{{ employe.numin }}</td>
+        <td colspan="6">{{ employe.numex }}</td>
+        <td colspan="6">                  <i (click)="deleteemployee(employe.id)" class="fa fa-trash"></i>
+          &nbsp;
+          <a routerLink="/edit/{{ employe.id }}"> <i  class="fa fa-edit"></i></a></td>
+
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <a class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" routerLink="/home" routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page">
+      <span></span> 
+   
+      Home
+   
+     </a> 
+  
+  </div>
+
+  

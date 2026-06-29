@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <app-navabar></app-navabar>
+<br><br><br><br>
+<table>
+  <thead>
+    <tr>
+      <th colspan="6">Nom</th>
+      <th colspan="6">Prenom</th>
+      <th colspan="6">Fonction</th>
+      <th colspan="6">Numero interne</th>
+      <th colspan="6">Numero externe</th>
+      <th colspan="6">Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Use *ngFor to iterate through agences -->
+    <ng-container *ngFor="let agence of getDistinctAgences()">
+      <ng-container *ngIf="hasMatchingEmploye(agence)">
+        
+        <tr class="agence">
+          <td colspan="36" class="dd">{{ agence }}</td>
+        </tr>          
+          
+
+            <!-- Use *ngFor to iterate through employes for the current agence -->
+            <tr *ngFor="let employe of getEmployesByAgence(agence)">
+
+              <ng-container *ngIf="employe.direction === 'tunis' && employe.siege == false">
+                <!-- Display employe details -->
+                <td colspan="6">{{ employe.nom }}</td>
+                <td colspan="6">{{ employe.prenom }}</td>
+                <td colspan="6">{{ employe.fonction }}</td>
+                <td colspan="6">{{ employe.numin }}</td>
+                <td colspan="6">{{ employe.numex}}</td>
+                <td colspan="6"> 
+                  <i (click)="deleteemployee(employe.id)" class="fa fa-trash"></i>
+                  &nbsp;
+                  <a routerLink="/edit/{{ employe.id }}"> <i  class="fa fa-edit"></i></a>
+                </td>
+
+              </ng-container>
+            </tr>
+          
+        
+      </ng-container>
+    </ng-container>
+  </tbody>
+</table>
+<div>
+  <a class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" routerLink="/home" routerLinkActive="active" 
+  [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page">
+    <span></span> 
+ 
+    Home
+ 
+   </a> 
+
+</div>
+</body>
+</html>

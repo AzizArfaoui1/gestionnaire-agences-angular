@@ -1,0 +1,52 @@
+<!-- agtunis.component.html -->
+<app-navabar></app-navabar>
+<br><br><br><br>
+<table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Fonction</th>
+        <th>Numero interne</th>
+        <th>Numero externe</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Use *ngFor to iterate through directions -->
+      <ng-container *ngFor="let direction of getDistinctDirections()">
+        <ng-container *ngIf="hasMatchingEmploye(direction)">
+          
+          <tr class="agence">
+            <td colspan="36" class="dd" >{{ direction }}</td>
+          </tr> 
+  
+              <!-- Use *ngFor to iterate through employes for the current direction -->
+              <tr *ngFor="let employe of getEmployesByDirection(direction)">
+                <!-- Display employe details -->
+                <td>{{ employe.nom }}</td>
+                <td>{{ employe.prenom }}</td>
+                <td>{{ employe.fonction }}</td>
+                <td>{{ employe.numin }}</td>
+                <td>{{ employe.numex}}</td>
+                <td>                  
+                  <i (click)="deleteemployee(employe.id)" class="fa fa-trash"></i>
+                  &nbsp;
+                  <a routerLink="/edit/{{ employe.id }}"> <i  class="fa fa-edit"></i></a></td>
+
+              </tr>
+          
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+  <div>
+    <a class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" routerLink="/home" routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page">
+      <span></span> 
+   
+      Home
+   
+     </a> 
+  
+  </div>

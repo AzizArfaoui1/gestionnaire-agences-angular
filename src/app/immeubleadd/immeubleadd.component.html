@@ -1,0 +1,53 @@
+<section class="text-gray-400 bg-gray-900 body-font relative">
+  <a class="a2 mr-5 hover:text-white" routerLink="/home" routerLinkActive="active" 
+  [routerLinkActiveOptions]="{exact: true}" ariaCurrentWhenActive="page">
+    <span></span> 
+ 
+    Home
+ 
+   </a>   
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Entrer Employé a un Immeuble</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Enter details for new employees.</p>
+      </div>
+      <form [formGroup]="employeform" (ngSubmit)="Ajouter()">
+        <div class="lg:w-1/2  mx-auto" >
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/3">
+              <label for="nom" class="leading-7 text-sm text-gray-400">Nom:</label><br>
+              <input type="text" id="nom" formControlName="nom" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="p-2 w-1/3">
+              <label for="prenom" class="leading-7 text-sm text-gray-400">Prenom:</label><br>
+              <input type="text" id="prenom" formControlName="prenom" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="p-2 w-1/3">
+                <label for="fonction" class="leading-7 text-sm text-gray-400">Fonction:</label><br>
+                <input type="text" id="fonction" formControlName="fonction" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <label for="immeuble" class="leading-7 text-sm text-gray-400">Immeuble:</label><br>
+              <select id="immeuble" formControlName="immeuble" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                <option value="chargueya">Chargueya</option>
+                <option value="mohamed 5">Mohamed 5</option>
+            </select> 
+            <div class="p-2 w-1/2">
+                <label for="numin" class="leading-7 text-sm text-gray-400">Num interne:</label><br>
+                <input type="number" id="numin" formControlName="numin" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <div class="p-2 w-1/2">
+                <label for="numex" class="leading-7 text-sm text-gray-400">Num externe:</label><br>
+                <input type="number" id="numex" formControlName="numex" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            <div class="p-2 w-full">
+              <button class="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Ajouter</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      
+          
+        </div>
+      
+  </section>
+  

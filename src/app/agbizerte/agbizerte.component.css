@@ -1,0 +1,36 @@
+/* Add this style to your CSS file or in a style block in your Angular component */
+table {
+    width: 100%; /* Set the table width to 100% */
+    border-collapse: collapse; /* Collapse the border spacing between cells */
+    background: aliceblue;
+
+  }
+  .agence .dd{
+    text-align: center;
+    color: aliceblue;
+   }
+  th, td {
+    padding: 8px; /* Add padding for better visual appearance */
+    border: 1px solid #000000; /* Add borders to cells */
+    text-align: left; /* Align text to the left within cells */
+  }
+  
+  /* Set the width of each column */
+  th:nth-child(1), td:nth-child(1) {
+    width: 20%; /* Adjust the width as needed */
+  }
+  
+  th:nth-child(2), td:nth-child(2) {
+    width: 20%; /* Adjust the width as needed */
+  }
+  
+  th:nth-child(3), td:nth-child(3) {
+    width: 20%; /* Adjust the width as needed */
+  }
+  
+  th:nth-child(4), td:nth-child(4) {
+    width: 20%; /* Adjust the width as needed */
+  }
+  th:nth-child(5), td:nth-child(5) {
+    width: 20%; /* Adjust the width as needed */
+  }
